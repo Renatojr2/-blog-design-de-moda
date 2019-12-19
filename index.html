@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Moda</title>
+</head>
+<div class="container">
+  <header class="active" id="navBar">
+    <div class="myLogo">
+      <a href="#" class="logo"><img class="Logotipo" src="img/logo.png" alt="Logo"></a>
+    </div>
+    <ul>
+      <li><a href="#" class="active">INICIO</a></li>
+      <li><a href="sobre.html">SOBRE</a></li>
+      <li><a href="contato.html">CONTATO</a></li>
+    </ul>
+
+
+    <span class="menuIcon" onclick="menuToggle()"></span>
+
+
+  </header>
+  <div class="content">
+    <div class="banerText" id="slideShowText">
+      <div class="active">
+        <h2>Texto sobre moda</h2>
+        <p>Lorem Ipsum é simplesmente uma simulação de texto
+          da indústria tipográfica e de
+          impressos, e vem sendo
+          utilizado desde o século XVI. ...</p>
+        <a href="artigos.html">Ler mais</a>
+      </div>
+      <div>
+        <h2>Texto sobre moda2</h2>
+        <p>Lorem Ipsum é simplesmente uma simulação de texto
+          da indústria tipográfica e de
+          impressos, e vem sendo
+          utilizado desde o século XVI. ...</p>
+        <a href="artigos.html">Ler mais</a>
+      </div>
+      <div>
+        <h2>Texto sobre moda3</h2>
+        <p>Lorem Ipsum é simplesmente uma simulação de texto
+          da indústria tipográfica e de
+          impressos, e vem sendo
+          utilizado desde o século XVI. ...</p>
+        <a href="artigos.html">Ler mais</a>
+      </div>
+
+    </div>
+    <div class="banerImage" id="slideShow">
+      <img src="img/img1.jpg" class="active" alt="Moda">
+      <img src="img/img2.jpg" alt="Moda">
+      <img src="img/img3.jpg" alt="Moda">
+    </div>
+  </div>
+
+  <div class="icons">
+    <ul class="sci">
+      <li><a href="https://www.facebook.com/fabiana.caetano.7315?ref=bookmarks" target="_black"><img
+            src="img/facebook.svg" width="24" alt=""></a></li>
+      <li><a href="https://www.instagram.com/fc.rj323/?hl=pt-br" target="_blank"><img src="img/instagram.svg" width="24"
+            alt=""></a>
+      </li>
+      <li><a href="#" target="_blank"><img src="img/linkedin.svg" width="24" alt=""></a></li>
+
+    </ul>
+    <ul class="controls">
+      <li><a href="#"><img src="img/left-arrow.png" onclick="prevSlide();prevSlideText()" width="24" alt=""></a></li>
+      <li><a href="#"><img class="rigth" src="img/rigth-arrow.png" onclick="nextSlide();nextSlideText()" width="24"
+            alt=""></a></li>
+
+    </ul>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var slideShow = document.getElementById('slideShow');
+  var slides = slideShow.getElementsByTagName('img');
+  var index = 0;
+
+  function nextSlide() {
+    slides[index].classList.remove('active');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+  }
+
+  function prevSlide() {
+    slides[index].classList.remove('active');
+    index = (index - 1 + slides.length) % slides.length;
+    slides[index].classList.add('active');
+  }
+
+  var slideShowText = document.getElementById('slideShowText');
+  var slidesText = slideShowText.getElementsByTagName('div');
+  var i = 0;
+
+  function nextSlideText() {
+    slidesText[i].classList.remove('active');
+    i = (i + 1) % slidesText.length;
+    slidesText[i].classList.add('active');
+  }
+
+  function prevSlideText() {
+    slidesText[i].classList.remove('active');
+    i = (i - 1 + slidesText.length) % slides.length;
+    slidesText[i].classList.add('active');
+  }
+
+  function menuToggle() {
+    var nav = document.getElementById('navBar');
+    nav.classList.toggle('active')
+
+
+  }
+</script>
+
+<body>
+
+</body>
+
+</html>
